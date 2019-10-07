@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>What AL East Baseball team are you?</title>
+<style>
+
+body {
+background: url("east.jpg") no-repeat center fixed;
+opacity:0.96;
+background-size: 100% 113%;
+font-family: Palatino;
+}
+
+#main {
+width: 550%;
+max-width: 950px;
+border: 1px gray solid;
+margin: auto;
+padding: 10px;
+background-color: white;
+border-radius: 10px;
+border: 1px solid #c6c7cc;
+font: 14px/1.4 "Palatino";
+overflow: hidden;
+width: 800px;
+padding-top: 30px;
+padding-right: 30px;
+padding-bottom: 30px;
+padding-left: 30px;
+    }
+
+#header {
+margin-top: 0;
+border: 2px solid black;
+padding: 5px;
+height: 250px;
+background: white;
+background-image:
+background-position: center;
+background-size: 100% 170%;
+    color: black;
+font-family:"Palatino";
+font-size: 15px;
+text-align: center
+    }
+    label {
+display: block;
+}
+
+input {
+width: 30px;
+margin-left: 20px;
+}
+
+h2 {
+clear: both;
+padding-top: 20px;
+}
+
+button {
+width: 100px;
+margin-top: 20px;
+}
+
+</style>
+</head>
+<body>
+<div id="main">
+<div id="header"><h1>Which AL East baseball team are you?</h1></div>
+
+<form  id="form1">
+
+<p>Do you enjoy homeruns?</p>
+<label><input type="radio" name="age" id="yes" value="1" />yes</label>
+<label><input type="radio" name="age" id="no" value="2" />no</label>
+<label><input type="radio" name="age" id="old" value="3" />I don't like showing off. </label>
+
+<p>Do you like being the underdog?</p>
+<label><input type="radio" name="activity" id="yes" value="1" />Yes</label>
+<label><input type="radio" name="activity" id="no" value="2" />No</label>
+<label><input type="radio"  name="activity" id="who" value="3" />Who want's to be the underdog?</label>
+
+<p>What is your favorite color?</p>
+<label><input type="radio" name="genre" id="rock2" value="1" />Orange</label>
+<label><input type="radio" name="genre" id="indie" value="2" />Blue</label>
+<label><input type="radio" name="genre" id="country" value="3" />Red</label>
+
+<p>Do you like winning championships?</p>
+<label><input type="radio" name="champ" id="yes" value="1" />Yes</label>
+<label><input type="radio" name="champ" id="hi" value="2" />No</label>
+
+
+<p>Which mascot is your favorite?</p>
+<label for="one">
+<input name="img" value="1" type="radio" id="one">
+      <img src="jay.jpg" width="250">
+    </label>
+
+		<label for="two">
+    <input name="img" value="2" type="radio" id="two">
+      <img src="dandy.jpg" width="250" >
+    </label>
+
+		<label for="three">
+    <input name="img" value="3" type="radio" id="three">
+      <img src="wally.jpg" width="250">
+    </label>
+
+		<label for="four">
+    <input name="img" value="4"  type="radio" id="four">
+      <img src="ray.jpg" width="250">
+    </label>
+
+		<label for="five">
+		<input name="img" value="5"  type="radio" id="five">
+      <img src="orioles.jpg" width="250">
+    </label>
+
+
+<button type="submit" value="Submit">Submit</button>
+
+</form>
+
+<p id="answer"></p>
+<p id="answer2"></p>
+</div>
+<script>
+	   document.getElementById("form1").onsubmit=function() {
+
+
+	   age = parseInt(document.querySelector('input[name = "age"]:checked').value);
+
+	  activity = parseInt(document.querySelector('input[name = "activity"]:checked').value);
+
+	  genre = parseInt(document.querySelector('input[name = "genre"]:checked').value);
+
+  champ = parseInt(document.querySelector('input[name = "champ"]:checked').value);
+
+  fav = parseInt(document.querySelector('input[name = "fav"]:checked').value);
+
+  img = parseInt(document.querySelector('input[name = "img"]:checked').value);
+
+	   total= age + activity + genre + champ + fav + img;
+
+
+	   //document.getElementById("answer").innerHTML = total;
+
+	   if(total < 4) {
+document.getElementById("answer2").innerHTML = "You got Quiet Company.";
+}
+
+   if(total >=4 && total < 7) {
+document.getElementById("answer2").innerHTML = "You got Spoon.";
+}
+
+	if(total >=7) {
+document.getElementById("answer2").innerHTML = "You got Willie Nelson.";
+}
+
+	   return false; // required to not refresh the page; just leave this here
+	   }// end the submit function
+</script>
+
+</body>
+</html>
